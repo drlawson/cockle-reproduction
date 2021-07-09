@@ -3,26 +3,64 @@ title: "02-morphmetrics"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+library(tidyverse)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+
+# Morphometrics 
+
+reading in size date csv
+
+```{r}
+W_H_Date_Only <- read.csv("../data/W_H_Date_Only.csv")
+
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+Anova of Width and Date
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+summary(aov(W_H_Date_Only$`Width..cm`~W_H_Date_Only$Date)) 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Width and date Tukey
+
+
+
+```{r}
+TukeyHSD(aov(W_H_Date_Only$`Width..cm`~W_H_Date_Only$Date)) 
+```
+
+
+For Height (anova and tukey)
+
+```{r}
+summary(aov(W_H_Date_Only$`Height..cm.`~W_H_Date_Only$Date))
+TukeyHSD(aov(W_H_Date_Only$`Height..cm.`~W_H_Date_Only$Date))
+```
+
+
+
+Making plot
+
+
+reading in size date csv
+
+```{r}
+CockleData <- read.csv("../data/CockleData.csv")
+
+```
+
+```{r}
+ggplot(CockleData, aes(x=`Width..cm.`,y =`Height..cm.`, color=Date, shape=Location),) + geom_point(size=3) + geom_abline(intercept=0.124, slope=0.8939, col = "black", size=0.5)+theme_bw()+
+  scale_color_brewer(palette = "RdYlBu")   
+```
+
+
+
+

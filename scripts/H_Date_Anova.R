@@ -1,1 +1,0 @@
-summary(aov(W_H_Date_Only$`Height (cm)`~W_H_Date_Only$Date))
