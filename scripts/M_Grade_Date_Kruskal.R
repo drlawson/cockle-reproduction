@@ -1,1 +1,0 @@
-kruskal.test(CockleData$`Male Grade`~CockleData$Date)
