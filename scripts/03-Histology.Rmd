@@ -10,26 +10,25 @@ library(MASS)
 ```
 
 
-
+Reading in Cockle Data csv
 ```{r}
 CockleData <- read.csv("../data/CockleData.csv")
-
 ```
 
 
+Kruskal-Wallis one-way analysis of variance analyzing female gonad grade by date
 ```{r}
 kruskal.test(CockleData$`Female.Gonad.Grade`~CockleData$Date)
 ```
 
 
-
+Kruskal-Wallis one-way analysis of variance analyzing male gonad grade by date
 ```{r}
 kruskal.test(CockleData$`Male.Grade`~CockleData$Date)
 ```
 
 
-
-
+Ordered Logistic Regression of female gonad grade analyzed by width and height 
 ```{r}
 summary(polr(as.factor(CockleData$`Female.Gonad.Grade`)~CockleData$`Width..cm.`+CockleData$`Height..cm.`,Hess=TRUE))
 
@@ -42,3 +41,27 @@ p <- pnorm(abs(ctableF[, "t value"]), lower.tail = FALSE) * 2
 
 
 
+Making Plots
+    
+    Figure 7. Date, male and female gonad stage, and width of each basket cockle 
+```{r}
+ggplot(CockleData, aes(x=`Female.Gonad.Stage`, y=`Male.Gonad.Stage`, color=`Width..cm.`)) +geom_point()+facet_wrap(~Date)+geom_jitter(size=4, width =0.3, height =0.5)+xlab("Female Gonad Stage")+ylab("Male Gonad Stage")+labs(color="Width (cm)")+scale_color_gradient(low="navajowhite1",high="red3")+ theme(strip.background = element_rect( fill="white"),panel.background = element_rect(fill="white"),panel.grid.major = element_line("gray92"),panel.grid.minor = element_line("gray92"),panel.border = element_rect("black",size=0.5,fill=NA), strip.text=element_text(size=10))
+```
+
+    Figure 9. Date, male and female gonad stage, and predicted age of each basket cockle
+```{r}
+ggplot(CockleData, aes(x=`Female.Gonad.Stage`, y=`Male.Gonad.Stage`, color=`Predicted.Age`)) +geom_point()+facet_wrap(~Date)+geom_jitter(size=4, width =0.3, height =0.5)+xlab("Female Gonad Stage")+ylab("Male Gonad Stage")+labs(color="Predicted Age")+theme(strip.background = element_rect( fill="white"),panel.background = element_rect(fill="white"), panel.grid.major = element_line("gray92"), panel.grid.minor = element_line("gray92"),
+panel.border = element_rect("black",size=0.5,fill=NA),strip.text=element_text(size=10)) + scale_colour_brewer(palette="RdYlBu") 
+```
+
+
+Reading in female gonad grade vs. size csv
+```{r}
+SizeRange_FemaleGrade <- read.csv("../data/SizeRange_FemaleGrade.csv")
+```
+
+    Figure 8. Female gonad grade vs. size 
+```{r}
+ggplot(SizeRange_FemaleGrade, aes(fill=Grade, x=`Width.range..cm.`,y=`Number.of.C..nuttallii`))+xlab("Width Range (cm)")+ylab("Number of C. nuttallii")+geom_bar(stat="identity")+scale_fill_brewer(palette="Oranges")+theme_bw()+theme(panel.grid.major = element_blank(),
+panel.grid.minor = element_blank())
+```

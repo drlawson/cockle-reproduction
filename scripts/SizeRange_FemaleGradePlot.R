@@ -1,2 +1,0 @@
-ggplot(SizeRange_FemaleGrade, aes(fill=Grade, x=`Width range (cm)`,y=`Number of C. nuttallii`))+geom_bar(stat="identity")+scale_fill_brewer(palette="Oranges")+theme_bw()+theme(panel.grid.major = element_blank(),
-panel.grid.minor = element_blank()) 

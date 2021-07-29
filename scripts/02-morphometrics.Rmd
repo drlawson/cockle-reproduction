@@ -8,59 +8,52 @@ library(tidyverse)
 ```
 
 
-
-
-
 # Morphometrics 
 
-reading in size date csv
-
+Reading in size and date csv
 ```{r}
 W_H_Date_Only <- read.csv("../data/W_H_Date_Only.csv")
-
 ```
 
 
-Anova of Width and Date
-
+One-way ANOVA and Tukey HSD of width and date
 ```{r}
 summary(aov(W_H_Date_Only$`Width..cm`~W_H_Date_Only$Date)) 
-```
-
-
-Width and date Tukey
-
-
-
-```{r}
 TukeyHSD(aov(W_H_Date_Only$`Width..cm`~W_H_Date_Only$Date)) 
 ```
 
 
-For Height (anova and tukey)
-
+One-way ANOVA and Tukey HSD of height and date
 ```{r}
 summary(aov(W_H_Date_Only$`Height..cm.`~W_H_Date_Only$Date))
 TukeyHSD(aov(W_H_Date_Only$`Height..cm.`~W_H_Date_Only$Date))
 ```
 
 
+Making Plot   
 
-Making plot
+    Figure 6. Width, height, date, and location of each cockle sample
+    
+    
+Reading in Dissection Data csv
+```{r}
+CockleData_Dissection_Data <- read.csv("../data/CockleData_Dissection_Data.csv")
+```
 
+Linear Regression of Width and Height 
 
-reading in size date csv
+    Provides slope and intercept for plot 
+```{r}
+lm(CockleData_Dissection_Data$`Height..cm.`~CockleData_Dissection_Data$`Width..cm.`)
+```
 
+Reading in Cockle Data csv
 ```{r}
 CockleData <- read.csv("../data/CockleData.csv")
-
 ```
 
+Plot
 ```{r}
 ggplot(CockleData, aes(x=`Width..cm.`,y =`Height..cm.`, color=Date, shape=Location),) + geom_point(size=3) + geom_abline(intercept=0.124, slope=0.8939, col = "black", size=0.5)+theme_bw()+
-  scale_color_brewer(palette = "RdYlBu")   
+  scale_color_brewer(palette = "RdYlBu")+xlab("Width (cm)")+ylab("Height (cm)")   
 ```
-
-
-
-

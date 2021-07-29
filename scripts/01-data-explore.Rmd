@@ -1,45 +1,44 @@
 ---
 title: "01-data-explore"
 output:
+  html_document: default
   md_document:
     variant: markdown_github
   pdf_document: default
-  html_document: default
 ---
 
 ```{r}
 library(tidyverse)
 ```
 
+Reading in Cockle Data csv
 ```{r}
-clam <- read.csv("../data/cockle_data.csv")
+CockleData <- read.csv("../data/CockleData.csv")
 ```
+
 
 
 Here is a plot
 
 ```{r}
-ggplot(clam, aes(`Width..cm.`,`Height..cm.`,colour=`Male.Tissue.Stage`,size=`Female.Tissue.Stage`,shape=Location))+geom_point()+
+ggplot(CockleData, aes(`Width..cm.`,`Height..cm.`,colour=`Male.Grade`,size=`Female.Gonad.Grade`,shape=Location))+geom_point()+
 theme_bw()+theme(panel.grid.major = element_blank(),
                 panel.grid.minor = element_blank())+scale_colour_brewer(palette = 11)
 ```
 ```{r}
-ggplot(clam, aes(x = Height..cm., y = Female.Tissue.Grade)) +
+ggplot(CockleData, aes(x = Height..cm., y = Female.Gonad.Stage)) +
   geom_point()
 ```
-```{r}
-ggplot(clam, aes(x = Female.Tissue.Grade)) +
-  geom_histogram(bins = 30) +
-  facet_wrap(~Male.Tissue.Grade)
+
 ```
 
 ```{r}
-ggplot(clam, aes(x = Female.Tissue.Grade)) +
+ggplot(CockleData, aes(x = Female.Gonad.Stage)) +
   geom_histogram(bins = 30) +
   facet_wrap(~Date)
 ```
 ```{r}
-ggplot(clam, aes(x = Male.Tissue.Grade)) +
+ggplot(CockleData, aes(x = Male.Gonad.Stage)) +
   geom_histogram(bins = 30) +
   facet_wrap(~Date)
 ```
@@ -47,20 +46,20 @@ ggplot(clam, aes(x = Male.Tissue.Grade)) +
 
 
 ```{r}
-ggplot(clam, aes(`Width..cm.`,`Male.Tissue.Stage`,colour=`Male.Tissue.Stage`,size=`Female.Tissue.Stage`,shape=Location))+geom_point()+
+ggplot(CockleData, aes(`Width..cm.`,`Male.Grade`,colour=`Male.Grade`,size=`Female.Gonad.Grade`,shape=Location))+geom_point()+
 theme_bw()+theme(panel.grid.major = element_blank(),
                 panel.grid.minor = element_blank())+scale_colour_brewer(palette = 11) +
   facet_wrap(~Date)
 ```
 ```{r}
-ggplot(clam, aes(`Width..cm.`,`Height..cm.`,colour=`Male.Tissue.Stage`,size=`Female.Tissue.Stage`,shape=Location ))+geom_point(alpha = 0.5)+
+ggplot(CockleData, aes(`Width..cm.`,`Height..cm.`,colour=`Male.Grade`,size=`Female.Gonad.Grade`,shape=Location ))+geom_point(alpha = 0.5)+
 theme_bw()+theme(panel.grid.major = element_blank(),
                 panel.grid.minor = element_blank())+scale_colour_brewer(palette = 11) +
   facet_wrap(~Location.Type)
   
 ```
 ```{r}
-ggplot(clam, aes(`Width..cm.`,`Height..cm.`,colour=`Male.Tissue.Stage`,size=`Female.Tissue.Stage`,shape=Location ))+geom_point(alpha = 0.5)+
+ggplot(CockleData, aes(`Width..cm.`,`Height..cm.`,colour=`Male.Grade`,size=`Female.Gonad.Grade`,shape=Location ))+geom_point(alpha = 0.5)+
 theme_bw()+theme(panel.grid.major = element_blank(),
                 panel.grid.minor = element_blank())+scale_colour_brewer(palette = 11) +
   facet_wrap(~Date)
@@ -70,13 +69,13 @@ theme_bw()+theme(panel.grid.major = element_blank(),
 
 
 ```{r}
-ggplot(clam, aes(x = Female.Tissue.Grade, y = Male.Tissue.Grade, color = Width..cm.)) +
+ggplot(CockleData, aes(x = Female.Gonad.Stage, y = Male.Gonad.Stage, color = Width..cm.)) +
   geom_point(alpha = .1) +
   geom_jitter(size = 4, width = 0.3, height = 0.5) +
   facet_wrap(~Date)
 ```
 
 ```{r}
-ggplot(clam, aes(fill=Female.Tissue.Grade, y=.Tissue.Grade, x=Date)) + 
+ggplot(CockleData, aes(fill=Female.Gonad.Stage, y=Male.Gonad.Stage, x=Date)) + 
     geom_bar(position="stack", stat="identity")
 ```
