@@ -72,6 +72,10 @@ SizeRange_FemaleGrade <- read.csv("../data/SizeRange_FemaleGrade.csv")
 
     Figure 8. Female gonad grade vs. size 
 ```{r}
-ggplot(SizeRange_FemaleGrade, aes(fill=Grade, x=`Width.range..cm.`,y=`Number.of.C..nuttallii`))+xlab("Width Range (cm)")+ylab("Number of C. nuttallii")+geom_bar(stat="identity")+scale_fill_brewer(palette="Oranges")+theme_bw()+theme(panel.grid.major = element_blank(),
-panel.grid.minor = element_blank())
+ggplot(SizeRange_FemaleGrade, aes(fill=Grade, x=`Width.range..cm.`,y=`Number.of.C..nuttallii`)) +
+  xlab("Width Range (cm)") +
+  ylab("Number of C. nuttallii") +
+  geom_bar(stat="identity") +
+  scale_fill_brewer(palette="Oranges") +
+  theme_bw()+theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 ```
