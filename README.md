@@ -1,10 +1,15 @@
 Code and data associated with paper: 
 
-## "Characterization of reproductive maturation in the basket cockle, Clinocardium nuttallii" by Delaney Lawson
+## "Characterization of reproductive maturation in the basket cockle, _Clinocardium nuttallii_" 
+Author Delaney Lawson
 
-[PDF Version of Manususcript]
+[PDF Version of Manususcript](https://github.com/drlawson/cockle-reproduction/blob/main/Lawson-Capstone.pdf)
 
 [Google doc link](https://docs.google.com/document/d/1yW3u7tCCBXVSf8YxZFtwRDIPVgnKMnvMCjVoaKXl7qw/edit?usp=sharing)
+
+---
+
+### Repository Stucture
 
 Size  
 - Statistical analysis and R code for figures can be accessed in file "02-morphometrics.Rmd" in data folder. 
