@@ -1,8 +1,8 @@
-# cockle-reproduction
-
 Code and data associated with paper: 
 
-"Characterization of reproductive maturation in the basket cockle, Clinocardium nuttallii" by Delaney Lawson
+## "Characterization of reproductive maturation in the basket cockle, Clinocardium nuttallii" by Delaney Lawson
+
+[PDF Version of Manususcript]
 
 [Google doc link](https://docs.google.com/document/d/1yW3u7tCCBXVSf8YxZFtwRDIPVgnKMnvMCjVoaKXl7qw/edit?usp=sharing)
 
