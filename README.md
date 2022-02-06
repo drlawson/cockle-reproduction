@@ -14,7 +14,7 @@ Author Delaney Lawson
 Data
 [W_H_Date_Only](https://github.com/drlawson/cockle-reproduction/blob/main/data/W_H_Date_Only.csv): Data sheet containing the widths, heights, and collection date of every C. nuttallii. 
 
-[CockleData_Dissection_Data](https://github.com/drlawson/cockle-reproduction/blob/main/data/CockleData_Dissection_Data.csv): Data sheet containing photo-ID from [Morphology](https://github.com/drlawson/cockle-reproduction/tree/main/images/morphology), Clam-ID, Cassette-ID from [Morphology](https://github.com/drlawson/cockle-reproduction/tree/main/images/morphology), collection site, location, collection date, width, and height for each C. nuttallii. 
+[CockleData_Dissection_Data](https://github.com/drlawson/cockle-reproduction/blob/main/data/CockleData_Dissection_Data.csv): Data sheet containing photo-ID from [Morphology](https://github.com/drlawson/cockle-reproduction/tree/main/images/morphology), Clam-ID, Cassette-ID from [Morphology](https://github.com/drlawson/cockle-reproduction/tree/main/images/morphology), collection site, location, collection date, width, and height for each C. nuttallii. *****need to change clam-id to cockle-id******* 
 
 [CockleData](https://github.com/drlawson/cockle-reproduction/blob/main/data/CockleData.csv): Data sheet containing Clam-ID, collection data, location, predicted age, width, height, histology grade and stage for each C. nuttallii. *****need to change clam-id to cockle-id******* Clam_ID is consistent with Clam-ID assigned in [CockleData_Dissection_Data](https://github.com/drlawson/cockle-reproduction/blob/main/data/CockleData_Dissection_Data.csv).
 
