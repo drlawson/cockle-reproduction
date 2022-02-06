@@ -20,7 +20,7 @@ Author Delaney Lawson
 
 [CockleData](https://github.com/drlawson/cockle-reproduction/blob/main/data/CockleData.csv): Data sheet containing Clam-ID from [CockleData_Dissection_Data](https://github.com/drlawson/cockle-reproduction/blob/main/data/CockleData_Dissection_Data.csv), collection data, location, predicted age, width, height, histology grade and stage for each C. nuttallii. This data sheet is a combination of information from [CockleData_Dissection_Data](https://github.com/drlawson/cockle-reproduction/blob/main/data/CockleData_Dissection_Data.csv) and [CockleData_Histo_Data](https://github.com/drlawson/cockle-reproduction/blob/main/data/CockleData_Histo_Data.csv). *****need to change clam-id to cockle-id******* 
 
-[SizeRange_FemaleGrade](https://github.com/drlawson/cockle-reproduction/blob/main/data/SizeRange_FemaleGrade.csv): Data sheet containing the width range (cm), histology grade, and number of C. nuttallii for that width range of female cockles. 
+[SizeRange_FemaleGrade](https://github.com/drlawson/cockle-reproduction/blob/main/data/SizeRange_FemaleGrade.csv): Data sheet containing the width range (cm), histology grade, and number of C. nuttallii within each width range of female cockles only. 
 
 
 **Scripts**<br />
